@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+ postgres:
+   image: postgres:14.1
+   environment:
+     POSTGRES_DB: next_auth_sd
+     POSTGRES_USER: root
+     POSTGRES_PASSWORD: pass@1234
+   ports:
+     - "5432:5432"
+   volumes:
+     - next-auth-sd-data:/var/lib/postgresql/data
+
+volumes:
+ next-auth-sd-data:
